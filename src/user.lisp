@@ -30,6 +30,7 @@
 (defstruct user
   (login nil :type (or null string))
   (id nil :type (or null integer))
+  (node-id nil :type (or null string))
   (avatar-url nil :type (or null string))
   (gravatar-id nil :type (or null string))
   (url nil :type (or null string))

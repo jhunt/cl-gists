@@ -44,6 +44,7 @@
   (forks-url nil :type (or null string))
   (commits-url nil :type (or null string))
   (id nil :type (or null string))
+  (node-id nil :type (or null string))
   (description nil :type (or null string))
   (public nil :type boolean)
   (owner nil :type (or null user))
@@ -61,12 +62,13 @@
   (history nil :type list)
   (truncated nil :type boolean))
 
-(defun make-gist (&key url forks-url commits-url id description public owner fork-of user files comments
+(defun make-gist (&key url forks-url commits-url id node-id description public owner fork-of user files comments
                     comments-url html-url git-pull-url git-push-url created-at updated-at forks history truncated)
   (%make-gist :url url
               :forks-url forks-url
               :commits-url commits-url
               :id id
+              :node-id node-id
               :description description
               :public public
               :owner (apply #'make-user owner)
